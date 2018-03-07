@@ -1,9 +1,9 @@
 <template>
   <div class="manage tc">
-    <button>新增</button>
-    <div class="input-area">
-      <input type="text" placeholder="请输入人员姓名">
-      <button class="OkButton">确定</button>
+    <button v-on:click="add">新增</button>
+    <div class="input-area" v-show="showAdd">
+      <input type="text" placeholder="请输入人员姓名" v-model="nameValue">
+      <button class="OkButton" v-on:click="addName">确定</button>
     </div>
       <table>
         <tr>
@@ -29,7 +29,27 @@
     data:function(){
       return{
         isNowPage:true,
-        peoples:[{'name':'jack'},{'name':'sean'}]
+        showAdd:false,
+        peoples:[{'name':'jack'},{'name':'sean'}],
+        nameValue:''
+      }
+    },
+    methods:{
+        add(){
+        this.showAdd=true
+      },
+      addName(){
+        var name=this.nameValue;
+        if(name.trim()=="")
+        {
+          alert("请输入新增人员名字！")
+        }
+        else
+        {
+          var data={};
+          data.name=name;
+          this.peoples.push(data)
+        }
       }
     }
   }
