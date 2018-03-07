@@ -40,7 +40,7 @@
   .OkButton{width: 80px;height: 40px;}
   input{width: 200px;height: 30px;margin-top: 10px;}
   table{align-self: center;border: 1px black solid;width: 400px;height: 100px;}
-  td{width: 100px;}
+  td{width: 100px;border: 1px black solid;}
   .btn{width: 50px;height: 30px; }
 
 </style>
