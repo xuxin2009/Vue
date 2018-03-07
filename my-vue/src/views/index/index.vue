@@ -1,7 +1,7 @@
 <template>
   <div>
     欢迎来到人员管理系统
-    <footer-nav></footer-nav>
+    <footer-nav v-bind:class="{'isIndex':isNowPage}"></footer-nav>
   </div>
 
 </template>
@@ -10,6 +10,11 @@
   export default {
     components:{
       FooterNav
+    },
+    data:function(){
+      return{
+        isNowPage:true
+      }
     }
   }
 </script>
